@@ -1,49 +1,47 @@
-# 42-Minitalk
+# ☎️ 42-Minitalk
 
-## About
+## 📑 About
 The purpose of this project is to code a small data exchange program using UNIX signals.
+ 
 
-## Mandatory Part
-Produce server & client executables
+## Prerequisites
 
-Client must communicate a string passed as a parameter to server (referenced by its process ID) which then displays it
+This project is written in C, you need to have a gcc compiler to run the program.
+ 
 
-Only SIGUSR1 & SIGUSR2 signals can be used
+## 💻 Instructions
 
-## Bonus Part
-Add reception acknowledgement system
-Support Unicode characters
+### Prerequisites
 
-## Allowed Functions
-◦ write
+### Compilation
 
-◦ ft_printf (personnal printf)
+To compile, go to the project folder and run the makefile : 
 
-◦ signal
+`make`
 
-◦ sigemptyset
+### 🕹 Testing
 
-◦ sigaddset
+#### Manual
 
-◦ sigaction
+To test the program, you need two terminals, one for the server and one for the client.
 
-◦ kill
+Run the server executable first :
 
-◦ getpid
+`./server`
 
-◦ malloc
+It will show you its PID
 
-◦ free
+Then run the client executable in the second terminal, using the PID you received from the server and a string of your choice : 
 
-◦ pause
+`./client "PID" "Your string"`
 
-◦ sleep
+#### Test script
 
-◦ usleep
+To check if the program run in particular case and how much time takes, you can use these shell script :
 
-◦ exit
+[to do list : insert test.sh file]
 
+## 💡 Project details
 
-# Compilation
-Clone repo including libft submodule via git clone --recursive https://github.com/hanshazairi/42-minitalk.git.
-Compile files into server & client executables via make -C 42-minitalk.
+This project needs to be familiar with UNIX signals and bitwise operation.
+
