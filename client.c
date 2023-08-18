@@ -25,7 +25,7 @@ void	send_char(int pid, char c)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(500);
+		usleep(1200);
 		i--;
 	}
 }
@@ -67,28 +67,6 @@ int	send(int pid, char *str)
 	}
 }
 
-int	ft_convert(char *str, int *res)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-		i++;
-	}
-	*res = 0;
-	i = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		*res *= 10;
-		*res += str[i] - '0';
-		i++;
-	}
-	return (1);
-}
-
 int	main(int argc, char **argv)
 {
 	int	pid;
@@ -99,7 +77,7 @@ int	main(int argc, char **argv)
 		Correct arguments : executable name, PID, and message", 1);
 		return (1);
 	}
-	if (ft_convert(argv[1], &pid) == 0)
+	if (ft_atoi_mod(argv[1], &pid) == 0)
 	{
 		ft_putstr_fd("Invalid argument.\
 		Correct arguments : executable name, PID, and message", 1);
