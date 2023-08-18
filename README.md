@@ -35,12 +35,6 @@ Then run the client executable in the second terminal, using the PID you receive
 
 `./client "PID" "Your string"`
 
-#### Test script
-
-To check if the program run in particular case and how much time takes, you can use these shell script :
-
-[to do list : insert test.sh file]
-
 ## 💡 Project details
 
 This project needs to be familiar with UNIX signals and bitwise operation.
